@@ -241,7 +241,7 @@ local p_host="%n%F{yellow}"
 # カレントディレクトリ
 local p_dir="%m%f:%/%1  "
 # 直前のコマンドの返り値が trueなら緑、falseなら赤
-local p_mark=" %B%(?,%F{green}(*'ᴗ') ,%F{red}(*;-;%)?)%(!,#, <)%f%b"
+local p_mark=" %B%(?,%F{green}(*'-') ,%F{red}(*;-;%)?)%(!,#, <)%f%b"
 PROMPT='$p_host@$p_dir`rprompt-git-current-branch`$p_mark'
 
 # 時刻更新
