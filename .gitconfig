@@ -1,0 +1,11 @@
+[alias]
+	vlog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --abbrev-commit --date=relative
+[user]
+	email = kumagai@sencorp.co.jp
+	name = d9magai
+[push]
+	default = current
+[color]
+	ui = auto
+[core]
+	autocrlf = false
