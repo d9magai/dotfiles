@@ -4,7 +4,7 @@ set -eux
 if [ -n "$(command -v yum)" ]; then
     sudo yum install -y epel-release
     sudo rpm -ivh https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-    sudo yum install -y --enablerepo=remi-php71 vim git nkf colordiff httpd zsh php php-cli php-mbstring php-xml php-pecl-zip php-pdo php-pecl-xdebug
+    sudo yum install -y --enablerepo=remi-php71 vim git nkf colordiff docker httpd zsh php php-cli php-mbstring php-xml php-pecl-zip php-pdo php-pecl-xdebug
 elif [ -n "$(command -v apt-get)" ]; then
     sudo apt-get update >/dev/null
     sudo apt-get install -y git zsh
