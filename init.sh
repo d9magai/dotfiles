@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -eux
+cd $(dirname $0)
 
 if [ -z "${PASSWORD+x}" ] ; then
    echo 'PASSWORD is undefined.'
@@ -40,4 +41,11 @@ expect -c "
   send \"${PASSWORD}\n\"
   interact
   "
+
+for f in .??*
+do
+    [[ "$f" == ".git" ]] && continue
+    [[ "$f" == ".DS_Store" ]] && continue
+    ln -sf $(pwd)/$f $HOME/$f
+done
 
