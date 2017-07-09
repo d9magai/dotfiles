@@ -3,8 +3,12 @@ set -eux
 
 if [ -n "$(command -v yum)" ]; then
     sudo yum install -y epel-release
-    sudo rpm -ivh https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-    sudo yum install -y --enablerepo=remi-php71 vim git nkf colordiff docker httpd zsh php php-cli php-mbstring php-xml php-pecl-zip php-pdo php-pecl-xdebug
+    sudo rpm -ivh --replacepkgs https://rpms.remirepo.net/enterprise/remi-release-7.rpm
+    sudo yum install -y --enablerepo=remi-php71 vim git nkf colordiff docker httpd zsh php php-cli php-mbstring php-xml php-pecl-zip php-pdo php-mysqlnd php-pecl-xdebug
+    sudo systemctl enable docker
+    sudo systemctl start docker
+    sudo systemctl enable httpd
+    sudo systemctl start httpd
 elif [ -n "$(command -v apt-get)" ]; then
     sudo apt-get update >/dev/null
     sudo apt-get install -y git zsh
