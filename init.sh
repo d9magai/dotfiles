@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -eux
 
+if [ -z "${PASSWORD+x}" ] ; then
+   echo 'PASSWORD is undefined.'
+   exit 1
+fi
+
 if [ -n "$(command -v yum)" ]; then
     sudo yum install -y epel-release
     sudo rpm -ivh --replacepkgs https://rpms.remirepo.net/enterprise/remi-release-7.rpm
