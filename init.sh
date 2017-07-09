@@ -4,7 +4,7 @@ set -eux
 if [ -n "$(command -v yum)" ]; then
     sudo yum install -y epel-release
     sudo rpm -ivh --replacepkgs https://rpms.remirepo.net/enterprise/remi-release-7.rpm
-    sudo yum install -y --enablerepo=remi-php71 vim git nkf colordiff docker httpd zsh php php-cli php-mbstring php-xml php-pecl-zip php-pdo php-mysqlnd php-pecl-xdebug
+    sudo yum install -y --enablerepo=remi-php71 vim git nkf colordiff docker httpd zsh expect php php-cli php-mbstring php-xml php-pecl-zip php-pdo php-mysqlnd php-pecl-xdebug
     sudo systemctl enable docker
     sudo systemctl start docker
     sudo systemctl enable httpd
@@ -28,4 +28,11 @@ else
     composer config -g repositories.packagist composer https://packagist.jp
     composer global require hirak/prestissimo
 fi
+
+expect -c "
+  spawn env LC_ALL=C chsh -s "/bin/zsh"
+  expect \"Password\"
+  send \"${PASSWORD}\n\"
+  interact
+  "
 
