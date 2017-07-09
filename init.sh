@@ -42,10 +42,5 @@ expect -c "
   interact
   "
 
-for f in .??*
-do
-    [[ "$f" == ".git" ]] && continue
-    [[ "$f" == ".DS_Store" ]] && continue
-    ln -sf $(pwd)/$f $HOME/$f
-done
+./deploy.sh
 
