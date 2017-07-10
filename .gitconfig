@@ -9,3 +9,5 @@
 	ui = auto
 [core]
 	autocrlf = false
+[url "https://"]
+	insteadOf = git://
