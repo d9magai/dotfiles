@@ -9,6 +9,7 @@
 	ui = auto
 [core]
 	autocrlf = false
+	excludesFile = ~/.gitignore_global
 [url "https://"]
 	insteadOf = git://
 [http]
