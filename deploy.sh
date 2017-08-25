@@ -11,3 +11,5 @@ done
 
 ln -snf $(pwd)/bin $HOME/bin
 
+touch $HOME/.zshrc_local
+
