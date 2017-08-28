@@ -18,7 +18,7 @@ if [ -n "$(command -v yum)" ]; then
 elif [ -n "$(command -v apt-get)" ]; then
     sudo add-apt-repository -y ppa:ondrej/php
     sudo apt-get update >/dev/null
-    sudo apt-get install -y git zsh curl expect php7.1 php7.1-curl php7.1-xml
+    sudo apt-get install -y vim git nkf colordiff zsh curl expect php7.1 php7.1-curl php7.1-xml
 fi
 
 mkdir -p ~/.ssh
