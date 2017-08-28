@@ -16,9 +16,15 @@ if [ -n "$(command -v yum)" ]; then
     sudo systemctl enable httpd
     sudo systemctl start httpd
 elif [ -n "$(command -v apt-get)" ]; then
+    sudo apt-get install -y software-properties-common apt-transport-https ca-certificates curl software-properties-common
     sudo add-apt-repository -y ppa:ondrej/php
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo apt-key fingerprint 0EBFCD88
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
     sudo apt-get update >/dev/null
-    sudo apt-get install -y vim git nkf colordiff zsh curl expect php7.1 php7.1-curl php7.1-xml
+    sudo apt-get install -y vim git nkf colordiff zsh curl expect php7.1 php7.1-curl php7.1-xml docker-ce
+    sudo systemctl enable docker
+    sudo systemctl start docker
 fi
 
 mkdir -p ~/.ssh
