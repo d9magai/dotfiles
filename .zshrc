@@ -46,8 +46,8 @@ PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/local/mongodb/bin
 ## alias
 
 # ls
-alias ls='ls -F --show-control-char --color=always'
-alias ll='ls -laF --show-control-char --color=always'
+alias ls='ls -FG'
+alias ll='ls -laFG'
 
 # Global Alias
 alias -g M='| more'
