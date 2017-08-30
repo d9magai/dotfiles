@@ -299,5 +299,5 @@ function do_enter() {
 zle -N do_enter
 bindkey '^m' do_enter
 
-source .zshrc_local
+source $HOME/.zshrc_local
 
