@@ -48,6 +48,7 @@ PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/local/mongodb/bin
 # ls
 alias ls='ls -FG'
 alias ll='ls -laFG'
+alias mkdir='mkdir -p'
 
 # Global Alias
 alias -g M='| more'
