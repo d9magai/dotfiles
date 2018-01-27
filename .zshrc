@@ -45,8 +45,13 @@ PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/local/mongodb/bin
 [ -f ~/.awsrc ] && . ~/.awsrc
 ## alias
 
-# ls
-alias ls='ls -FG'
+if [ "$(uname)" = 'Darwin' ]; then
+    export LSCOLORS=xbfxcxdxbxegedabagacad
+    alias ls='ls -G'
+else
+    eval `dircolors ~/.colorrc`
+    alias ls='ls --color=auto'
+fi
 alias ll='ls -laFG'
 alias mkdir='mkdir -p'
 
